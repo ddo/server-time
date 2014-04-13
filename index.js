@@ -4,13 +4,11 @@ var app     = express();
 /**
  * CORS support.
  */
-app.all('*', function(req, res, next){
-    if (!req.get('Origin')) return next();
-    res.set('Access-Control-Allow-Origin', '*');
-    res.set('Access-Control-Allow-Methods', 'GET');
-    res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
-    if ('OPTIONS' == req.method) return res.send(200);
-    next();
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+  next();
 });
 
 app.get('/', function(req, res){
