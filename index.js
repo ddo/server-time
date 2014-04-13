@@ -1,6 +1,18 @@
 var express = require('express');
 var app     = express();
 
+/**
+ * CORS support.
+ */
+app.all('*', function(req, res, next){
+    if (!req.get('Origin')) return next();
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Methods', 'GET');
+    res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+    if ('OPTIONS' == req.method) return res.send(200);
+    next();
+});
+
 app.get('/', function(req, res){
     var now = new Date();
 
