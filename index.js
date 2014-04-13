@@ -6,6 +6,7 @@ app.get('/', function(req, res){
 
     res.send({
         string: now.toUTCString(),
+        now: now,
         timestamp: now.getTime()
     });
 });
