@@ -1,7 +1,7 @@
 var express = require('express');
 var app     = express();
 
-app.get('/', function(r){
+app.get('/', function(req, res){
     var now = new Date();
 
     res.send({
