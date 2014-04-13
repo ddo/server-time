@@ -1,0 +1,27 @@
+{
+  "name": "server-time",
+  "version": "0.0.0",
+  "description": "reply server time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://ddo@github.com/ddo/server-time.git"
+  },
+  "keywords": [
+    "time",
+    "server",
+    "sync"
+  ],
+  "author": "ddo <joeddo89@gmail.com> (http://ddo.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ddo/server-time/issues"
+  },
+  "homepage": "https://github.com/ddo/server-time",
+  "dependencies": {
+    "express": "^4.0.0"
+  }
+}
